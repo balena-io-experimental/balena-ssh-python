@@ -10,7 +10,7 @@ NOTE: This container enables SSH access as root with a PASSWORD stored in plain 
 
 Add an environment variable called PASSWD with the value to set as root password.
 
-![alt text](https://github.com/balena-io-playground/balena-ssh-python/blob/balenalib/img/env.png?raw=true "creating envar")
+![alt text](https://github.com/balena-io-playground/balena-ssh-python/blob/master/img/env.png?raw=true "creating envar")
 
 Then run
 
