@@ -1,15 +1,9 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-python
-
-#switch on systemd init system in container
-ENV INITSYSTEM on
+FROM balenalib/%%BALENA_MACHINE_NAME%%-python:3-stretch-run
 
 # Install Dropbear.
-RUN apt-get update && apt-get install -yq --no-install-recommends \
-	dropbear \
-	&& apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN install_packages dropbear
 
-# pip install python deps from requirements.txt
-# For caching until requirements.txt changes
+# Install Flask
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
